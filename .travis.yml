@@ -7,3 +7,6 @@ install:
   - make deps
 script:
   - make test
+after success:
+  -make docker_build
+  -PASSWORD=${rafa123l} make docker_push
